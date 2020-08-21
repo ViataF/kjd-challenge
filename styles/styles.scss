@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 600px) {
+  // Home
+  .home {
+    background-image: url("../kjd-assets/hearo-top.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+    width: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+      position: relative;
+      top: 215px;
+      width: 190px;
+    }
+    .arrow_down {
+      position: relative;
+      top: 300px;
+      height: 28px;
+    }
+  }
+  // About box
+  .box {
+    background: #6e239a;
+    height: 25vh;
+    margin: 0 20px;
+    font-size: medium;
+    text-align: center;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
+    top: 85%;
+
+    img {
+      position: absolute;
+      top: (146px);
+      left: 158px;
+      width: 25px;
+    }
+  }
+  button.btn {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  // About
+  .about {
+    background: #201728;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150vh;
+    position: absolute;
+    top: 460px;
+    // transform: skewY(2deg) translateY(-130px) translateX(-1px);
+    position: absolute; /* absolute or fixed positioning required */
+    clip-path: polygon(0 0, 100% 2%, 100% 92%, 0% 100%);
+    text-align: center;
+
+    img.cross {
+      position: relative;
+      height: 80px;
+      margin: 40% 0 0;
+    }
+    section.advertising {
+      // background-image: url(../kjd-assets/hex-gradient.png);
+      // background-size: 30vh;
+      // background-repeat: no-repeat;
+      color: white;
+      // position: relative;
+      // left: 40px;
+      // display: flex;
+      img.hex {
+        position: absolute;
+        width: 130px;
+        left: 40px;
+        top: 30%;
+      }
+      img.people {
+        position: absolute;
+        width: 190px;
+        top: 300px;
+        right: 20px;
+        z-index: 10;
+      }
+    }
+    aside.ad {
+      text-align: start;
+      position: relative;
+
+      h3 {
+        padding: 0 80px 0 20px;
+        position: relative;
+        z-index: 100;
+      }
+      p {
+        position: relative;
+        left: 20px;
+        padding-right: 100px;
+        font-size: 10px;
+        z-index: 100;
+      }
+    }
+    .data {
+      background-color: #6f249b;
+      display: none;
+    }
+    .cards {
+      display: flex;
+      justify-content: space-evenly;
+      .card1 {
+        background-image: url("../kjd-assets/bg-square-gradient.png");
+      }
+      .card2 {
+        background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+      }
+      .card3 {
+        background-image: url("../kjd-assets/bg-circle-gradient.png");
+      }
+    }
+  }
+
+  footer {
+    background-color: #201728;
+  }
+}
