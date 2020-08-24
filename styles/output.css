@@ -4,7 +4,465 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .home {
+  section.home {
+    background-image: url("../kjd-assets/hearo-top.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+    width: 100vw;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.home .logo {
+    position: relative;
+    top: 215px;
+    width: 190px;
+  }
+  section.home .arrow_down {
+    position: relative;
+    top: 345px;
+    height: 28px;
+  }
+
+  .box {
+    background: #6e239a;
+    height: 25vh;
+    margin: 0 20px;
+    font-size: medium;
+    text-align: center;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
+    top: 85%;
+  }
+  .box img {
+    position: absolute;
+    top: 146px;
+    left: 158px;
+    width: 25px;
+  }
+
+  button.btn {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about {
+    background: #201728;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 101vw;
+    height: 150vh;
+    position: absolute;
+    top: 510px;
+    position: absolute;
+    /* absolute or fixed positioning required */
+    clip-path: polygon(0 0, 100% 2%, 100% 92%, 0% 100%);
+    text-align: center;
+  }
+  .about img.cross {
+    height: 80px;
+    margin: 40% 0 0;
+  }
+  .about section.advertising {
+    color: white;
+  }
+  .about section.advertising img.hex {
+    position: absolute;
+    width: 130px;
+    right: 20px;
+    top: 30%;
+  }
+  .about section.advertising img.people {
+    width: 190px;
+    top: 320px;
+    z-index: 10;
+  }
+  .about section.advertising img.glyph {
+    position: absolute;
+    width: 15px;
+    right: 90px;
+    top: 45%;
+  }
+  .about aside.ad {
+    text-align: start;
+    position: relative;
+  }
+  .about aside.ad h3 {
+    padding: 0 80px 0 20px;
+    position: relative;
+    z-index: 100;
+  }
+  .about aside.ad p {
+    position: relative;
+    left: 20px;
+    padding-right: 100px;
+    font-size: 10px;
+    z-index: 100;
+  }
+  .about aside.ad button {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+  .about .data {
+    background-color: #6f249b;
+    display: none;
+  }
+  .about .cards {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .about .cards .card1 {
+    background-image: url("../kjd-assets/bg-square-gradient.png");
+  }
+  .about .cards .card2 {
+    background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+  }
+  .about .cards .card3 {
+    background-image: url("../kjd-assets/bg-circle-gradient.png");
+  }
+
+  footer {
+    background-color: #201728;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  section.home {
+    background-image: url(../kjd-assets/hearo-top.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+    width: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.home .logo {
+    position: relative;
+    top: 215px;
+    width: 190px;
+  }
+  section.home .arrow_down {
+    position: relative;
+    top: 300px;
+    height: 28px;
+  }
+
+  .box {
+    background: #6e239a;
+    height: 25vh;
+    margin: 0 85px;
+    font-size: medium;
+    text-align: center;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
+    top: 84%;
+  }
+  .box img {
+    position: absolute;
+    top: 146px;
+    left: 158px;
+    width: 25px;
+  }
+
+  button.btn {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about {
+    background: #201728;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150vh;
+    position: absolute;
+    top: 606px;
+    position: absolute;
+    /* absolute or fixed positioning required */
+    clip-path: polygon(0 0, 100% 2%, 100% 92%, 0% 100%);
+    text-align: center;
+  }
+  .about img.cross {
+    position: relative;
+    height: 80px;
+    margin: 40% 0 0;
+  }
+  .about section.advertising {
+    color: white;
+  }
+  .about section.advertising img.hex {
+    position: absolute;
+    width: 130px;
+    right: 20px;
+    top: 30%;
+  }
+  .about section.advertising img.people {
+    width: 190px;
+    top: 320px;
+    z-index: 10;
+  }
+  .about section.advertising img.glyph {
+    position: absolute;
+    width: 15px;
+    right: 90px;
+    top: 45%;
+  }
+  .about aside.ad {
+    text-align: start;
+    position: relative;
+  }
+  .about aside.ad h3 {
+    padding: 0 80px 0 20px;
+    position: relative;
+    z-index: 100;
+  }
+  .about aside.ad p {
+    position: relative;
+    left: 20px;
+    padding-right: 100px;
+    font-size: 10px;
+    z-index: 100;
+  }
+  .about aside.ad button {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+  .about .data {
+    background-color: #6f249b;
+    display: none;
+  }
+  .about .cards {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .about .cards .card1 {
+    background-image: url("../kjd-assets/bg-square-gradient.png");
+  }
+  .about .cards .card2 {
+    background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+  }
+  .about .cards .card3 {
+    background-image: url("../kjd-assets/bg-circle-gradient.png");
+  }
+
+  footer {
+    background-color: #201728;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  section.home {
+    background-image: url(../kjd-assets/hearo-top.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+    width: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.home .logo {
+    position: relative;
+    top: 215px;
+    width: 190px;
+  }
+  section.home .arrow_down {
+    position: relative;
+    top: 300px;
+    height: 28px;
+  }
+
+  .box {
+    background: #6e239a;
+    height: 25vh;
+    margin: 0 85px;
+    font-size: medium;
+    text-align: center;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
+    top: 84%;
+  }
+  .box img {
+    position: absolute;
+    top: 146px;
+    left: 158px;
+    width: 25px;
+  }
+
+  button.btn {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about {
+    background: #201728;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150vh;
+    position: absolute;
+    top: 460px;
+    position: absolute;
+    /* absolute or fixed positioning required */
+    clip-path: polygon(0 0, 100% 2%, 100% 92%, 0% 100%);
+    text-align: center;
+  }
+  .about img.cross {
+    position: relative;
+    height: 80px;
+    margin: 40% 0 0;
+  }
+  .about section.advertising {
+    color: white;
+  }
+  .about section.advertising img.hex {
+    position: absolute;
+    width: 130px;
+    right: 20px;
+    top: 30%;
+  }
+  .about section.advertising img.people {
+    width: 190px;
+    top: 320px;
+    z-index: 10;
+  }
+  .about section.advertising img.glyph {
+    position: absolute;
+    width: 15px;
+    right: 90px;
+    top: 45%;
+  }
+  .about aside.ad {
+    text-align: start;
+    position: relative;
+  }
+  .about aside.ad h3 {
+    padding: 0 80px 0 20px;
+    position: relative;
+    z-index: 100;
+  }
+  .about aside.ad p {
+    position: relative;
+    left: 20px;
+    padding-right: 100px;
+    font-size: 10px;
+    z-index: 100;
+  }
+  .about aside.ad button {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+  .about .data {
+    background-color: #6f249b;
+    display: none;
+  }
+  .about .cards {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .about .cards .card1 {
+    background-image: url("../kjd-assets/bg-square-gradient.png");
+  }
+  .about .cards .card2 {
+    background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+  }
+  .about .cards .card3 {
+    background-image: url("../kjd-assets/bg-circle-gradient.png");
+  }
+
+  footer {
+    background-color: #201728;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  section.home {
     background-image: url("../kjd-assets/hearo-top.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,12 +475,12 @@
     flex-direction: column;
     align-items: center;
   }
-  .home .logo {
+  section.home .logo {
     position: relative;
-    top: 215px;
+    top: 255px;
     width: 190px;
   }
-  .home .arrow_down {
+  section.home .arrow_down {
     position: relative;
     top: 300px;
     height: 28px;
@@ -117,6 +575,163 @@
     left: 20px;
     padding-right: 100px;
     font-size: 10px;
+    z-index: 100;
+  }
+  .about aside.ad button {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+  .about .data {
+    background-color: #6f249b;
+    display: none;
+  }
+  .about .cards {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .about .cards .card1 {
+    background-image: url("../kjd-assets/bg-square-gradient.png");
+  }
+  .about .cards .card2 {
+    background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+  }
+  .about .cards .card3 {
+    background-image: url("../kjd-assets/bg-circle-gradient.png");
+  }
+
+  footer {
+    background-color: #201728;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  section.home {
+    background-image: url(../kjd-assets/hearo-top.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110vh;
+    width: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.home .logo {
+    position: relative;
+    top: 250px;
+    width: 450px;
+  }
+  section.home .arrow_down {
+    position: relative;
+    top: 425px;
+    height: 60px;
+  }
+
+  .box {
+    background: #6e239a;
+    height: 29vh;
+    width: 67vw;
+    font-size: xx-large;
+    text-align: center;
+    right: 200px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
+    top: 85%;
+  }
+  .box img {
+    position: absolute;
+    top: 166px;
+    left: 54%;
+    width: 34px;
+  }
+
+  button.btn {
+    background-color: transparent;
+    color: white;
+    border: red 1px solid;
+    width: 120px;
+    height: 35px;
+    font-family: monospace;
+    font-size: 0.9rem;
+  }
+
+  .about {
+    background: #201728;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150vh;
+    position: absolute;
+    top: 87vh;
+    position: absolute;
+    /* absolute or fixed positioning required */
+    clip-path: polygon(0 0, 100% 4%, 100% 92%, 0% 100%);
+    text-align: center;
+  }
+  .about img.cross {
+    position: relative;
+    height: 160px;
+    margin: 20% 0 0;
+  }
+  .about section.advertising {
+    color: white;
+  }
+  .about section.advertising img.hex {
+    position: absolute;
+    width: 300px;
+    left: 35%;
+    top: 45%;
+  }
+  .about section.advertising img.people {
+    position: absolute;
+    width: 500px;
+    top: 60%;
+    right: 220px;
+    z-index: 100;
+  }
+  .about section.advertising img.glyph {
+    position: absolute;
+    width: 15px;
+    right: 90px;
+    top: 45%;
+  }
+  .about aside.ad {
+    text-align: start;
+    position: absolute;
+    left: 20%;
+    z-index: 2000;
+  }
+  .about aside.ad h3 {
+    position: relative;
+    z-index: 1000;
+    font-size: 50px;
+  }
+  .about aside.ad span {
+    position: relative;
+    z-index: 100;
+    font-size: 50px;
+  }
+  .about aside.ad p {
+    position: relative;
+    left: 20px;
+    padding-right: 100px;
+    font-size: 20px;
     z-index: 100;
   }
   .about aside.ad button {
