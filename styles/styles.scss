@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 @media only screen and (max-width: 600px) {
   // Home
@@ -665,7 +666,7 @@
     background-image: url(../kjd-assets/hearo-top.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 110vh;
+    height: 150vh;
     width: 100%;
     position: absolute;
     clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
@@ -675,45 +676,46 @@
     align-items: center;
     .logo {
       position: relative;
-      top: 250px;
+      top: 320px;
       width: 450px;
     }
     .arrow_down {
       position: relative;
-      top: 425px;
-      height: 60px;
+      top: 412px;
+      height: 43px;
     }
   }
   // About box
   .box {
     background: #6e239a;
-    height: 29vh;
-    width: 67vw;
+    height: 60vh;
+    width: 63vw;
     font-size: xx-large;
     text-align: center;
-    right: 200px;
+    left: 185px;
     justify-content: center;
     display: flex;
     align-items: center;
     color: white;
     position: absolute;
-    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
-    top: 85%;
+    clip-path: polygon(0 0, 100% 0%, 100% 84%, 0% 100%);
+    top: 111%;
 
     img {
       position: absolute;
-      top: 166px;
-      left: 54%;
-      width: 34px;
+      top: 285px;
+      left: 55%;
+      width: 39px;
     }
   }
   button.btn {
+    position: relative;
     background-color: transparent;
     color: white;
     border: red 1px solid;
-    width: 120px;
+    width: 130px;
     height: 35px;
-
+    top: 20px;
     font-family: monospace;
     font-size: 0.9rem;
   }
@@ -724,52 +726,55 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 150vh;
+    height: 200vh;
     position: absolute;
-    top: 87vh;
+    top: 115vh;
     // transform: skewY(2deg) translateY(-130px) translateX(-1px);
     position: absolute; /* absolute or fixed positioning required */
-    clip-path: polygon(0 0, 100% 4%, 100% 92%, 0% 100%);
+    clip-path: polygon(0 0, 100% 7%, 100% 95%, 0% 100%);
     text-align: center;
 
     img.cross {
       position: relative;
-      height: 160px;
-      margin: 20% 0 0;
+      height: 161px;
+      margin: 35% 0 0;
     }
     section.advertising {
-      // background-image: url(../kjd-assets/hex-gradient.png);
-      // background-size: 30vh;
-      // background-repeat: no-repeat;
       color: white;
-      // position: relative;
-      // left: 40px;
-      // display: flex;
+
       img.hex {
         position: absolute;
-        width: 300px;
-        left: 35%;
-        top: 45%;
+        width: 380px;
+        left: 26%;
+        top: 40%;
       }
       img.people {
         position: absolute;
-        width: 500px;
-        top: 60%;
-        right: 220px;
-        z-index: 100;
+        width: 600px;
+        top: 50%;
+        right: 180px;
+        z-index: 50;
       }
       img.glyph {
         position: absolute;
-        width: 15px;
-        right: 90px;
-        top: 45%;
+        width: 45px;
+        right: 250px;
+        top: 47.5%;
+        z-index: 100;
+      }
+      img.arrow-glyph {
+        position: absolute;
+        top: 75%;
+        left: 30%;
+        height: 110px;
       }
     }
 
     aside.ad {
       text-align: start;
       position: absolute;
-      left: 20%;
+      top: 45.6%;
+      left: 12%;
       z-index: 2000;
       h3 {
         // padding: 0 80px 0 20px;
@@ -785,8 +790,8 @@
       p {
         position: relative;
         left: 20px;
-        padding-right: 100px;
-        font-size: 20px;
+        padding-right: 69vw;
+        font-size: 15px;
         z-index: 100;
       }
       button {
@@ -804,22 +809,96 @@
         justify-content: center;
       }
     }
-    .data {
-      background-color: #6f249b;
-      display: none;
+  }
+  section.data {
+    background-color: #6f249b;
+    height: 150vh;
+    position: absolute;
+    top: 310%;
+    clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0% 100%);
+    img.circle {
+      position: absolute;
+      right: 309px;
+      width: 34vw;
+      top: 185px;
     }
-    .cards {
-      display: flex;
-      justify-content: space-evenly;
-      .card1 {
-        background-image: url("../kjd-assets/bg-square-gradient.png");
+    img.image-slider {
+      position: absolute;
+      width: 47vw;
+      top: 290px;
+      left: 100px;
+    }
+    aside {
+      color: whitesmoke;
+      h3 {
+        font-size: 50px;
+        position: absolute;
+        top: 300px;
+        right: 300px;
       }
-      .card2 {
-        background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+      p {
+        position: relative;
+        top: 290px;
+        left: 250px;
+        padding: 10% 40%;
       }
-      .card3 {
-        background-image: url("../kjd-assets/bg-circle-gradient.png");
+      button {
+        color: white;
+        position: absolute;
+        top: 95vh;
+        border: solid red 1px;
+        width: 150px;
+        padding: 10px 0;
+        right: 355px;
+        background-color: transparent;
       }
+      img.right-arrow {
+        position: absolute;
+        top: 97vh;
+        right: 325px;
+      }
+    }
+    img.down-arrow {
+      position: absolute;
+      bottom: 120px;
+      left: 49%;
+    }
+  }
+
+  section.cards {
+    background-color: white;
+    height: 70vh;
+    position: absolute;
+    top: 475%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    span {
+      color: red;
+    }
+    .card1 {
+      background-image: url("../kjd-assets/bg-square-gradient.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: cover;
+      width: 405px;
+      height: 325px;
+    }
+    .card2 {
+      background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      width: 405px;
+      height: 325px;
+    }
+    .card3 {
+      background-image: url("../kjd-assets/bg-circle-gradient.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: cover;
+      width: 405px;
+      height: 325px;
     }
   }
 
