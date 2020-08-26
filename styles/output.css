@@ -4,6 +4,75 @@
   list-style: none;
 }
 
+@font-face {
+  font-family: myFirstFont;
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+  font-family: box;
+  src: url("../fonts/Playfair_Display/PlayfairDisplay-Medium.ttf");
+}
+.box {
+  font-family: box;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #6f249b;
+  display: block;
+  transition: 0.6s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+img.menu {
+  width: 38px;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  z-index: 10;
+  padding: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
 @media only screen and (max-width: 600px) {
   section.home {
     background-image: url("../kjd-assets/hearo-top.jpg");
@@ -17,6 +86,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadeIn;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */
   }
   section.home .logo {
     position: relative;
@@ -27,15 +100,26 @@
     position: relative;
     top: 345px;
     height: 28px;
+    animation-name: bounce;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+  }
+  section.home .arrow_down:hover {
+    position: relative;
+    top: 345px;
+    height: 28px;
+    animation-name: bounce;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
   }
 
   .box {
     background: #6e239a;
-    height: 25vh;
+    height: 27vh;
     margin: 0 20px;
-    font-size: medium;
+    font-size: 15px;
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,10 +127,11 @@
     position: absolute;
     clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
     top: 85%;
+    font-family: box;
   }
   .box img {
     position: absolute;
-    top: 129px;
+    top: 24vh;
     left: 165px;
     width: 25px;
   }
@@ -54,7 +139,22 @@
   button.btn {
     background-color: transparent;
     color: white;
-    border: red 1px solid;
+    border: #f2055c 1px solid;
+    margin: 20px;
+    width: 70px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  button.btn:hover {
+    background-color: #f2055c;
+    color: white;
+    border: #f2055c 1px solid;
     margin: 20px;
     width: 70px;
     height: 20px;
@@ -84,48 +184,65 @@
     margin: 40% 0 0;
   }
   .about section.advertising {
-    color: white;
+    color: whitesmoke;
   }
   .about section.advertising img.hex {
     position: absolute;
-    width: 130px;
-    right: 20px;
-    top: 30%;
+    width: 240px;
+    left: 5%;
+    top: 33%;
   }
   .about section.advertising img.people {
-    width: 190px;
-    top: 320px;
-    z-index: 10;
+    position: absolute;
+    width: 230px;
+    top: 32.5%;
+    right: 15px;
+    z-index: 50;
   }
   .about section.advertising img.glyph {
     position: absolute;
-    width: 15px;
-    right: 90px;
-    top: 45%;
+    width: 20px;
+    right: 40px;
+    top: 30%;
+    z-index: 100;
+  }
+  .about section.advertising img.arrow-glyph {
+    position: absolute;
+    top: 71%;
+    right: 15%;
+    height: 70px;
   }
   .about aside.ad {
     text-align: start;
-    position: relative;
-    width: 100%;
+    position: absolute;
+    top: 49%;
+    left: 5%;
+    z-index: 2000;
+    margin-right: 25%;
   }
-  .about aside.ad h3 {
-    padding: 0 80px 0 20px;
+  .about aside.ad span.advertising {
     position: relative;
     z-index: 100;
+    font-family: box;
+    font-size: 26px;
+  }
+  .about aside.ad span.communication {
+    position: relative;
+    z-index: 100;
+    font-family: box;
+    font-size: 26px;
   }
   .about aside.ad p {
-    position: relative;
-    left: 20px;
-    margin-right: 100px;
-    font-size: 10px;
+    position: static;
+    padding: 5px 3vw 10px 0;
+    font-size: 12px;
     z-index: 100;
   }
   .about aside.ad button {
     background-color: transparent;
     color: white;
-    border: red 1px solid;
-    margin: 20px;
-    width: 70px;
+    border: #f2055c 1px solid;
+    width: 80px;
     height: 20px;
     padding: 4px;
     text-align: center;
@@ -134,83 +251,105 @@
     display: flex;
     justify-content: center;
   }
+  .about aside.ad img.right_arrow {
+    position: absolute;
+    top: 92%;
+    width: 30px;
+    left: 70px;
+  }
 
   section.data {
-    display: none;
     background-color: #6f249b;
-    height: 150vh;
+    height: 100vh;
     position: absolute;
     top: 233%;
     clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0% 100%);
   }
   section.data img.circle {
     position: absolute;
-    right: 309px;
-    width: 34vw;
-    top: 185px;
+    right: 30px;
+    width: 70vw;
+    top: 200px;
   }
   section.data img.image-slider {
     position: absolute;
-    width: 47vw;
-    top: 290px;
-    left: 100px;
+    width: 65vw;
+    top: 120px;
+    left: 10px;
   }
   section.data aside {
     color: whitesmoke;
   }
   section.data aside h3 {
-    font-size: 50px;
+    font-size: 30px;
     position: absolute;
-    top: 300px;
-    right: 300px;
+    top: 200px;
+    right: 30px;
+    font-family: box;
   }
   section.data aside p {
     position: relative;
-    top: 290px;
-    left: 250px;
-    margin: 10% 40%;
+    text-align: center;
+    top: 260px;
+    margin: 6% 8%;
   }
   section.data aside button {
     color: white;
     position: absolute;
-    top: 95vh;
-    border: solid red 1px;
-    width: 150px;
+    top: 77vh;
+    border: solid #f2055c 1px;
+    width: 120px;
     padding: 10px 0;
-    right: 355px;
+    left: 79px;
     background-color: transparent;
+  }
+  section.data aside button:hover {
+    color: white;
+    position: absolute;
+    top: 77vh;
+    border: solid #f2055c 1px;
+    width: 120px;
+    padding: 10px 0;
+    left: 79px;
+    background-color: #f2055c;
   }
   section.data aside img.right-arrow {
     position: absolute;
-    top: 97vh;
-    right: 325px;
+    top: 79vh;
+    right: 93px;
+    width: 40px;
   }
   section.data img.down-arrow {
     position: absolute;
-    bottom: 120px;
-    left: 49%;
+    top: 250px;
+    left: 5%;
+    height: 60px;
   }
 
   section.cards {
     background-color: white;
     height: 60vh;
     position: absolute;
-    top: 475%;
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    display: none;
+    top: 337%;
+    margin: 20px;
   }
   section.cards span {
-    color: red;
+    color: #f2055c;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 11px;
+  }
+  section.cards img.right-arrow {
+    position: relative;
+    left: 229px;
+    width: 35px;
   }
   section.cards .card1 {
     background-image: url("../kjd-assets/bg-square-gradient.png");
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: center center;
     background-size: cover;
-    width: 343px;
-    height: 277px;
+    width: 280px;
+    height: 240px;
   }
   section.cards .card1 span {
     top: 30px;
@@ -222,37 +361,46 @@
     left: 20px;
     position: relative;
     color: whitesmoke;
-    font-size: xx-large;
+    font-size: x-large;
     padding: 20px 40px 0 0;
+    font-family: box;
+  }
+  section.cards .card1 img.right-arrow {
+    top: 81px;
   }
   section.cards .card2 {
     background-image: url("../kjd-assets/bg-rectangle-gradient.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    width: 343px;
-    height: 277px;
+    width: 280px;
+    height: 240px;
+    margin: 23px 0;
   }
   section.cards .card2 span {
     top: 30px;
     left: 20px;
     position: relative;
   }
+  section.cards .card2 img.right-arrow {
+    top: 111px;
+  }
   section.cards .card2 p {
     top: 30px;
     left: 20px;
     position: relative;
     color: whitesmoke;
-    font-size: xx-large;
+    font-size: x-large;
     padding: 20px 40px 0 0;
+    font-family: box;
   }
   section.cards .card3 {
     background-image: url("../kjd-assets/bg-circle-gradient.png");
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: center center;
     background-size: cover;
-    width: 343px;
-    height: 277px;
+    width: 280px;
+    height: 240px;
   }
   section.cards .card3 span {
     top: 30px;
@@ -264,30 +412,40 @@
     left: 20px;
     position: relative;
     color: whitesmoke;
-    font-size: xx-large;
+    font-size: x-large;
+    font-family: box;
     padding: 20px 40px 0 0;
+  }
+  section.cards .card3 img.right-arrow {
+    top: 110px;
   }
 
   footer {
     background-color: #201728;
-    height: 30vh;
+    height: 90vh;
     position: absolute;
-    top: 540%;
-    display: flex;
-    justify-content: space-evenly;
+    top: 500%;
     width: 100%;
     padding-top: 30px;
-    display: none;
+    font-family: myFirstFont;
+    text-align: center;
   }
   footer h5 {
-    color: red;
+    color: #f2055c;
+    font-size: larger;
+    padding-bottom: 10px;
+    padding-top: 20px;
   }
   footer section {
     color: whitesmoke;
   }
   footer a {
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
+  }
+  footer p {
+    padding-top: 5px;
+    padding-bottom: 10px;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -449,7 +607,7 @@
     background-image: url(../kjd-assets/hearo-top.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 120vh;
+    height: 150vh;
     width: 100%;
     position: absolute;
     clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
@@ -460,203 +618,49 @@
   }
   section.home .logo {
     position: relative;
-    top: 215px;
-    width: 190px;
+    top: 297px;
+    width: 430px;
   }
   section.home .arrow_down {
     position: relative;
-    top: 300px;
-    height: 28px;
+    top: 372px;
+    height: 39px;
   }
 
   .box {
     background: #6e239a;
-    height: 25vh;
-    margin: 0 85px;
-    font-size: medium;
+    height: 62vh;
+    width: 63vw;
     text-align: center;
-    padding: 30px 20px;
+    left: 87px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     color: white;
     position: absolute;
-    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
-    top: 84%;
+    clip-path: polygon(0 0, 100% 0%, 100% 84%, 0% 100%);
+    top: 110%;
+  }
+  .box p {
+    padding: 20px 57px;
+    font-size: 29px;
   }
   .box img {
     position: absolute;
-    top: 146px;
-    left: 158px;
-    width: 25px;
-  }
-
-  button.btn {
-    background-color: transparent;
-    color: white;
-    border: red 1px solid;
-    margin: 20px;
-    width: 70px;
-    height: 20px;
-    padding: 4px;
-    text-align: center;
-    font-family: monospace;
-    font-size: 0.6rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  .about {
-    background: #201728;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 150vh;
-    position: absolute;
-    top: 460px;
-    position: absolute;
-    /* absolute or fixed positioning required */
-    clip-path: polygon(0 0, 100% 2%, 100% 92%, 0% 100%);
-    text-align: center;
-  }
-  .about img.cross {
-    position: relative;
-    height: 80px;
-    margin: 40% 0 0;
-  }
-  .about section.advertising {
-    color: white;
-  }
-  .about section.advertising img.hex {
-    position: absolute;
-    width: 130px;
-    right: 20px;
-    top: 30%;
-  }
-  .about section.advertising img.people {
-    width: 190px;
-    top: 320px;
-    z-index: 10;
-  }
-  .about section.advertising img.glyph {
-    position: absolute;
-    width: 15px;
-    right: 90px;
-    top: 45%;
-  }
-  .about aside.ad {
-    text-align: start;
-    position: relative;
-  }
-  .about aside.ad h3 {
-    padding: 0 80px 0 20px;
-    position: relative;
-    z-index: 100;
-  }
-  .about aside.ad p {
-    position: relative;
-    left: 20px;
-    padding-right: 100px;
-    font-size: 10px;
-    z-index: 100;
-  }
-  .about aside.ad button {
-    background-color: transparent;
-    color: white;
-    border: red 1px solid;
-    margin: 20px;
-    width: 70px;
-    height: 20px;
-    padding: 4px;
-    text-align: center;
-    font-family: monospace;
-    font-size: 0.6rem;
-    display: flex;
-    justify-content: center;
-  }
-  .about .data {
-    background-color: #6f249b;
-    display: none;
-  }
-  .about .cards {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .about .cards .card1 {
-    background-image: url("../kjd-assets/bg-square-gradient.png");
-  }
-  .about .cards .card2 {
-    background-image: url("../kjd-assets/bg-rectangle-gradient.png");
-  }
-  .about .cards .card3 {
-    background-image: url("../kjd-assets/bg-circle-gradient.png");
-  }
-
-  footer {
-    background-color: #201728;
-  }
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  section.home {
-    background-image: url("../kjd-assets/hearo-top.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 120vh;
-    width: 100%;
-    position: absolute;
-    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 85%);
-    background-position: center center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  section.home .logo {
-    position: relative;
     top: 255px;
-    width: 190px;
+    left: 56.5%;
+    width: 43px;
   }
-  section.home .arrow_down {
+  .box button.btn {
     position: relative;
-    top: 300px;
-    height: 28px;
-  }
-
-  .box {
-    background: #6e239a;
-    height: 25vh;
-    margin: 0 20px;
-    font-size: medium;
-    text-align: center;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    position: absolute;
-    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
-    top: 85%;
-  }
-  .box img {
-    position: absolute;
-    top: 146px;
-    left: 158px;
-    width: 25px;
-  }
-
-  button.btn {
     background-color: transparent;
-    color: white;
-    border: red 1px solid;
-    margin: 20px;
-    width: 70px;
-    height: 20px;
-    padding: 4px;
-    text-align: center;
-    font-family: monospace;
-    font-size: 0.6rem;
+    color: whitesmoke;
+    border: #f2055c 1px solid;
+    width: 130px;
+    height: 35px;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 0.8rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
   }
 
   .about {
@@ -664,89 +668,297 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 150vh;
+    height: 250vh;
     position: absolute;
-    top: 460px;
+    top: 110vh;
     position: absolute;
     /* absolute or fixed positioning required */
-    clip-path: polygon(0 0, 100% 2%, 100% 92%, 0% 100%);
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
     text-align: center;
   }
   .about img.cross {
     position: relative;
-    height: 80px;
-    margin: 40% 0 0;
+    height: 165px;
+    margin: 35.5% 0 0;
   }
   .about section.advertising {
-    color: white;
+    color: whitesmoke;
   }
   .about section.advertising img.hex {
     position: absolute;
-    width: 130px;
-    right: 20px;
-    top: 30%;
+    width: 380px;
+    left: 27%;
+    top: 43%;
   }
   .about section.advertising img.people {
-    width: 190px;
-    top: 320px;
-    z-index: 10;
+    position: absolute;
+    width: 520px;
+    top: 53.5%;
+    right: 60px;
+    z-index: 50;
   }
   .about section.advertising img.glyph {
     position: absolute;
-    width: 15px;
-    right: 90px;
-    top: 45%;
+    width: 40px;
+    right: 130px;
+    top: 51%;
+    z-index: 100;
+  }
+  .about section.advertising img.arrow-glyph {
+    position: absolute;
+    top: 79%;
+    left: 30%;
+    height: 110px;
   }
   .about aside.ad {
     text-align: start;
-    position: relative;
+    position: absolute;
+    top: 48.5%;
+    left: 9%;
+    z-index: 2000;
+    margin-right: 25%;
   }
-  .about aside.ad h3 {
-    padding: 0 80px 0 20px;
+  .about aside.ad span.advertising {
     position: relative;
     z-index: 100;
+    font-family: box;
+    font-size: 49px;
+  }
+  .about aside.ad span.communication {
+    position: relative;
+    z-index: 100;
+    font-family: box;
+    font-size: 49px;
   }
   .about aside.ad p {
-    position: relative;
-    left: 20px;
-    padding-right: 100px;
-    font-size: 10px;
+    position: static;
+    padding: 25px 39vw 30px 0;
+    font-size: 15px;
     z-index: 100;
   }
   .about aside.ad button {
+    position: static;
     background-color: transparent;
     color: white;
-    border: red 1px solid;
-    margin: 20px;
-    width: 70px;
-    height: 20px;
-    padding: 4px;
+    border: #f2055c 1px solid;
+    width: 123px;
+    height: 31px;
+    margin: 10px 0 0 0;
     text-align: center;
-    font-family: monospace;
-    font-size: 0.6rem;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 0.8rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
   }
-  .about .data {
+  .about aside.ad button :hover {
+    position: static;
+    background-color: #f2055c;
+    color: white;
+    border: #f2055c 1px solid;
+    width: 123px;
+    height: 31px;
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  .about aside.ad img.right_arrow {
+    position: absolute;
+    top: 93%;
+    left: 107px;
+  }
+
+  section.data {
     background-color: #6f249b;
-    display: none;
+    height: 150vh;
+    position: absolute;
+    top: 347%;
+    clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0% 100%);
   }
-  .about .cards {
+  section.data img.circle {
+    position: absolute;
+    right: 309px;
+    width: 34vw;
+    top: 185px;
+  }
+  section.data img.image-slider {
+    position: absolute;
+    width: 47vw;
+    top: 290px;
+    left: 100px;
+  }
+  section.data aside {
+    color: whitesmoke;
+  }
+  section.data aside h3 {
+    font-size: 50px;
+    position: absolute;
+    top: 300px;
+    right: 150px;
+    font-family: box;
+  }
+  section.data aside p {
+    position: relative;
+    top: 290px;
+    left: 220px;
+    margin: 10% 37%;
+    font-family: myFirstFont;
+  }
+  section.data aside button {
+    color: white;
+    position: absolute;
+    top: 98vh;
+    border: solid #f2055c 1px;
+    width: 150px;
+    padding: 10px 0;
+    right: 275px;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    background-color: transparent;
+  }
+  section.data aside button :hover {
+    color: white;
+    position: absolute;
+    top: 98vh;
+    border: solid #f2055c 1px;
+    width: 150px;
+    padding: 10px 0;
+    right: 275px;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    background-color: transparent;
+  }
+  section.data aside img.right-arrow {
+    position: absolute;
+    top: 100.5vh;
+    right: 253px;
+  }
+  section.data img.down-arrow {
+    position: absolute;
+    bottom: 120px;
+    left: 49%;
+  }
+
+  section.cards {
+    background-color: white;
+    height: 60vh;
+    position: absolute;
+    top: 510%;
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
   }
-  .about .cards .card1 {
+  section.cards span {
+    color: #f2055c;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 11px;
+  }
+  section.cards img.right-arrow {
+    position: relative;
+    left: 239px;
+    width: 40px;
+  }
+  section.cards .card1 {
     background-image: url("../kjd-assets/bg-square-gradient.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    width: 300px;
+    height: 277px;
   }
-  .about .cards .card2 {
+  section.cards .card1 span {
+    top: 30px;
+    left: 20px;
+    position: relative;
+  }
+  section.cards .card1 p {
+    top: 30px;
+    left: 20px;
+    position: relative;
+    color: whitesmoke;
+    font-size: xx-large;
+    padding: 20px 40px 0 0;
+    font-family: box;
+  }
+  section.cards .card1 img.right-arrow {
+    top: 71px;
+  }
+  section.cards .card2 {
     background-image: url("../kjd-assets/bg-rectangle-gradient.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 300px;
+    height: 277px;
   }
-  .about .cards .card3 {
+  section.cards .card2 span {
+    top: 30px;
+    left: 20px;
+    position: relative;
+  }
+  section.cards .card2 img.right-arrow {
+    top: 80px;
+  }
+  section.cards .card2 p {
+    top: 30px;
+    left: 20px;
+    position: relative;
+    color: whitesmoke;
+    font-size: xx-large;
+    padding: 20px 40px 0 0;
+    font-family: box;
+  }
+  section.cards .card3 {
     background-image: url("../kjd-assets/bg-circle-gradient.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    width: 300px;
+    height: 277px;
+  }
+  section.cards .card3 span {
+    top: 30px;
+    left: 20px;
+    position: relative;
+  }
+  section.cards .card3 p {
+    top: 30px;
+    left: 20px;
+    position: relative;
+    color: whitesmoke;
+    font-size: xx-large;
+    font-family: box;
+    padding: 20px 40px 0 0;
+  }
+  section.cards .card3 img.right-arrow {
+    top: 80px;
   }
 
   footer {
     background-color: #201728;
+    height: 25vh;
+    position: absolute;
+    top: 570%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 30px;
+    font-family: myFirstFont;
+  }
+  footer h5 {
+    color: #f2055c;
+    font-size: larger;
+    padding-bottom: 20px;
+  }
+  footer section {
+    color: whitesmoke;
+  }
+  footer a {
+    color: white;
+    text-decoration: none;
+  }
+  footer p {
+    padding-top: 5px;
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -763,6 +975,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadeIn 2s;
   }
   section.home .logo {
     position: relative;
@@ -771,42 +984,46 @@
   }
   section.home .arrow_down {
     position: relative;
-    top: 412px;
-    height: 43px;
+    top: 465px;
+    height: 47px;
+    animation-name: bounce;
+    animation-duration: 3s;
   }
 
   .box {
     background: #6e239a;
-    height: 60vh;
+    height: 62vh;
     width: 63vw;
-    font-size: xx-large;
     text-align: center;
     left: 185px;
-    justify-content: center;
     display: flex;
     align-items: center;
     color: white;
     position: absolute;
     clip-path: polygon(0 0, 100% 0%, 100% 84%, 0% 100%);
-    top: 111%;
+    top: 110%;
+  }
+  .box p {
+    padding: 20px 57px;
+    font-size: 39px;
   }
   .box img {
     position: absolute;
-    top: 285px;
-    left: 55%;
-    width: 39px;
+    top: 309px;
+    left: 55.5%;
+    width: 41px;
   }
-
-  button.btn {
+  .box button.btn {
     position: relative;
     background-color: transparent;
-    color: white;
-    border: red 1px solid;
+    color: whitesmoke;
+    border: #f2055c 1px solid;
     width: 130px;
     height: 35px;
-    top: 20px;
-    font-family: monospace;
-    font-size: 0.9rem;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
   }
 
   .about {
@@ -814,9 +1031,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 200vh;
+    height: 250vh;
     position: absolute;
-    top: 113vh;
+    top: 110vh;
     position: absolute;
     /* absolute or fixed positioning required */
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
@@ -824,22 +1041,22 @@
   }
   .about img.cross {
     position: relative;
-    height: 161px;
-    margin: 35% 0 0;
+    height: 165px;
+    margin: 35.5% 0 0;
   }
   .about section.advertising {
-    color: white;
+    color: whitesmoke;
   }
   .about section.advertising img.hex {
     position: absolute;
     width: 380px;
-    left: 26%;
-    top: 40%;
+    left: 27%;
+    top: 43%;
   }
   .about section.advertising img.people {
     position: absolute;
     width: 600px;
-    top: 50%;
+    top: 53.5%;
     right: 180px;
     z-index: 50;
   }
@@ -847,59 +1064,81 @@
     position: absolute;
     width: 45px;
     right: 250px;
-    top: 47.5%;
+    top: 51%;
     z-index: 100;
   }
   .about section.advertising img.arrow-glyph {
     position: absolute;
-    top: 75%;
+    top: 79%;
     left: 30%;
     height: 110px;
   }
   .about aside.ad {
     text-align: start;
     position: absolute;
-    top: 45.6%;
-    left: 12%;
+    top: 48.5%;
+    left: 15%;
     z-index: 2000;
     margin-right: 25%;
   }
-  .about aside.ad h3 {
-    position: relative;
-    z-index: 1000;
-    font-size: 50px;
-  }
-  .about aside.ad span {
+  .about aside.ad span.advertising {
     position: relative;
     z-index: 100;
-    font-size: 50px;
+    font-family: box;
+    font-size: 49px;
+  }
+  .about aside.ad span.communication {
+    position: relative;
+    z-index: 100;
+    font-family: box;
+    font-size: 49px;
   }
   .about aside.ad p {
-    position: relative;
-    padding-right: 69vw;
+    position: static;
+    padding: 25px 39vw 30px 0;
     font-size: 15px;
     z-index: 100;
+    font-family: myFirstFont;
   }
   .about aside.ad button {
+    position: static;
     background-color: transparent;
     color: white;
-    border: red 1px solid;
-    margin: 20px;
-    width: 70px;
-    height: 20px;
-    padding: 4px;
+    border: #f2055c 1px solid;
+    width: 123px;
+    height: 31px;
+    margin: 20px 0 0 0;
     text-align: center;
-    font-family: monospace;
-    font-size: 0.6rem;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 0.8rem;
     display: flex;
-    justify-content: center;
+    align-items: center;
+  }
+  .about aside.ad button:hover {
+    position: static;
+    background-color: #f2055c;
+    color: white;
+    border: #f2055c 1px solid;
+    width: 123px;
+    height: 31px;
+    margin: 20px 0 0 0;
+    text-align: center;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  .about aside.ad img.right_arrow {
+    position: absolute;
+    top: 93%;
+    left: 107px;
   }
 
   section.data {
     background-color: #6f249b;
     height: 150vh;
     position: absolute;
-    top: 310%;
+    top: 347%;
     clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0% 100%);
   }
   section.data img.circle {
@@ -922,21 +1161,24 @@
     position: absolute;
     top: 300px;
     right: 300px;
+    font-family: box;
   }
   section.data aside p {
     position: relative;
     top: 290px;
     left: 250px;
     margin: 10% 40%;
+    font-family: myFirstFont;
   }
   section.data aside button {
     color: white;
     position: absolute;
     top: 95vh;
-    border: solid red 1px;
+    border: solid #f2055c 1px;
     width: 150px;
     padding: 10px 0;
     right: 355px;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
     background-color: transparent;
   }
   section.data aside img.right-arrow {
@@ -954,13 +1196,20 @@
     background-color: white;
     height: 60vh;
     position: absolute;
-    top: 475%;
+    top: 510%;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
   }
   section.cards span {
-    color: red;
+    color: #f2055c;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    font-size: 11px;
+  }
+  section.cards img.right-arrow {
+    position: relative;
+    left: 279px;
+    width: 40px;
   }
   section.cards .card1 {
     background-image: url("../kjd-assets/bg-square-gradient.png");
@@ -982,6 +1231,10 @@
     color: whitesmoke;
     font-size: xx-large;
     padding: 20px 40px 0 0;
+    font-family: box;
+  }
+  section.cards .card1 img.right-arrow {
+    top: 69px;
   }
   section.cards .card2 {
     background-image: url("../kjd-assets/bg-rectangle-gradient.png");
@@ -996,6 +1249,9 @@
     left: 20px;
     position: relative;
   }
+  section.cards .card2 img.right-arrow {
+    top: 111px;
+  }
   section.cards .card2 p {
     top: 30px;
     left: 20px;
@@ -1003,6 +1259,7 @@
     color: whitesmoke;
     font-size: xx-large;
     padding: 20px 40px 0 0;
+    font-family: box;
   }
   section.cards .card3 {
     background-image: url("../kjd-assets/bg-circle-gradient.png");
@@ -1023,21 +1280,28 @@
     position: relative;
     color: whitesmoke;
     font-size: xx-large;
+    font-family: box;
     padding: 20px 40px 0 0;
+  }
+  section.cards .card3 img.right-arrow {
+    top: 110px;
   }
 
   footer {
     background-color: #201728;
-    height: 30vh;
+    height: 25vh;
     position: absolute;
-    top: 540%;
+    top: 570%;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     padding-top: 30px;
+    font-family: myFirstFont;
   }
   footer h5 {
-    color: red;
+    color: #f2055c;
+    font-size: larger;
+    padding-bottom: 20px;
   }
   footer section {
     color: whitesmoke;
@@ -1045,6 +1309,9 @@
   footer a {
     color: white;
     text-decoration: none;
+  }
+  footer p {
+    padding-top: 5px;
   }
 }
 
